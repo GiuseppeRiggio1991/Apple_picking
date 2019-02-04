@@ -1,0 +1,199 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%2345678901234567890123456789012345678901234567890123456789012345678901234567890
+%        1         2         3         4         5         6         7         8
+
+\documentclass[letterpaper, 10 pt, conference]{ieeeconf}  % Comment this line out if you need a4paper
+
+%\documentclass[a4paper, 10pt, conference]{ieeeconf}      % Use this line for a4 paper
+
+\IEEEoverridecommandlockouts                              % This command is only needed if 
+                                                          % you want to use the \thanks command
+
+\overrideIEEEmargins                                      % Needed to meet printer requirements.
+
+\usepackage{graphicx}
+\usepackage{makeidx}
+\usepackage{epsfig}
+\usepackage{times}
+\usepackage{amsmath}
+
+\let\proof\relax
+\let\endproof\relax
+\usepackage{amsthm}
+
+
+\usepackage{amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{gensymb}
+\usepackage{newlfont}
+\usepackage{marvosym}
+\usepackage{graphicx}
+\usepackage{fixltx2e}
+\usepackage{amsfonts}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{physics}
+\usepackage{subfigure}
+%\usepackage{amsmath,amsfonts}
+\usepackage{Cris}
+
+\theoremstyle{prop}
+\newtheorem{prop}{Proposition}
+
+
+\newcommand{\gr}[1]{{\color{magenta}{{#1}}}}
+\definecolor{magenta}{rgb}{1,0,1}
+
+\usepackage{balance}
+
+\title{\LARGE \bf
+Preparation of Papers for IEEE Sponsored Conferences \& Symposia*
+}
+
+
+\author{Giuseppe Riggio$^{1}$, Fouad Sukkar$^{2}$, Robert Fitch$^{2}$ and Cristian Secchi$^{1}$% <-this % stops a space
+\thanks{*This research is supported in part by an Australian Government Research Training Program (RTP) Scholarship, the University of Technology Sydney, and}% <-this % stops a space
+\thanks{$^2$Authors are with the Centre for Autonomous Systems, University of Technology Sydney, Ultimo NSW 2006, Australia {\tt\footnotesize\{fouad.sukkar, rfitch\}@uts.edu.au}}%
+\thanks{$^{1}$Authors are with the Department of Sciences and Methods for
+Engineering (DISMI), University of Modena and Reggio Emilia, Italy
+{\tt\small{\{giuseppe.riggio, cristian.secchi\}@unimore.it}}}%
+}
+
+
+\begin{document}
+
+
+
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{abstract}
+
+This electronic document is a �live� template. The various components of your paper [title, text, heads, etc.] are already defined on the style sheet, as illustrated by the portions given in this document.
+
+\end{abstract}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{INTRODUCTION}
+The~\cite{best2018decmcts}
+% talk about the state of art in robotic harvesting for apples and other fruits. Introduction to our method and main contributions. 
+
+\section{PROBLEM STATEMENT}
+
+\section{SYSTEM OVERVIEW}
+% overview of system architecture, include diagram of architecture (ros rqt_graph?), state machine diagrams, etc...
+% talk about hardware: arm (7DOF because better for constraint planning, cite FREDS-MP), realsense, gripper etc ...
+
+\section{INFORMATIVE PLANNING AND SEGMENTATION}
+% active perception planning and GPIS segmentation
+\subsection{Viewpoint Evaluation}
+
+\subsection{Viewpoint Planning}
+
+\subsection{Dirichlet Segmentation}
+
+\section{ARM CONTROL AND MOTION PLANNING}
+% talk about FREDS-MP briefly and sawyer control framework (only interface - take from ROBOT2017 paper)
+\subsection{FREDS-MP}
+
+\subsection{Arm Execution}
+
+\section{APPLE GRASPING}
+\subsection{Apple Sequencing}
+% Talk about how we get the apple locations from the segmentation module and then use FREDS-MP to sequence based on database heuristics
+
+\subsection{Grasping} 
+% visual servoing, grasping state machine
+
+
+\section{EXPERIMENTS}
+
+\subsection{Experimental Setup}
+
+\subsection{Results}
+
+\subsection{Discussion}
+
+\section{USING THE TEMPLATE}
+
+Use this sample document as your LaTeX source file to create your document. Save this file as {\bf root.tex}. You have to make sure to use the cls file that came with this distribution. If you use a different style file, you cannot expect to get required margins. Note also that when you are creating your out PDF file, the source file is only part of the equation. {\it Your \TeX\ $\rightarrow$ PDF filter determines the output file size. Even if you make all the specifications to output a letter file in the source - if your filter is set to produce A4, you will only get A4 output. }
+
+It is impossible to account for all possible situation, one would encounter using \TeX. If you are using multiple \TeX\ files you must make sure that the ``MAIN`` source file is called root.tex - this is particularly important if your conference is using PaperPlaza's built in \TeX\ to PDF conversion tool.
+
+\subsection{Headings, etc}
+
+Text heads organize the topics on a relational, hierarchical basis. For example, the paper title is the primary text head because all subsequent material relates and elaborates on this one topic. If there are two or more sub-topics, the next level head (uppercase Roman numerals) should be used and, conversely, if there are not at least two sub-topics, then no subheads should be introduced. Styles named �Heading 1�, �Heading 2�, �Heading 3�, and �Heading 4� are prescribed.
+
+\subsection{Figures and Tables}
+
+Positioning Figures and Tables: Place figures and tables at the top and bottom of columns. Avoid placing them in the middle of columns. Large figures and tables may span across both columns. Figure captions should be below the figures; table heads should appear above the tables. Insert figures and tables after they are cited in the text. Use the abbreviation �Fig. 1�, even at the beginning of a sentence.
+
+\begin{table}[h]
+\caption{An Example of a Table}
+\label{table_example}
+\begin{center}
+\begin{tabular}{|c||c|}
+\hline
+One & Two\\
+\hline
+Three & Four\\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+
+   \begin{figure}[thpb]
+      \centering
+      \framebox{\parbox{3in}{We suggest that you use a text box to insert a graphic (which is ideally a 300 dpi TIFF or EPS file, with all fonts embedded) because, in an document, this method is somewhat more stable than directly inserting a picture.
+}}
+      %\includegraphics[scale=1.0]{figurefile}
+      \caption{Inductance of oscillation winding on amorphous
+       magnetic core versus DC bias magnetic field}
+      \label{figurelabel}
+   \end{figure}
+
+
+\section{CONCLUSIONS}
+
+
+\addtolength{\textheight}{-12cm}   % This command serves to balance the column lengths
+                                  % on the last page of the document manually. It shortens
+                                  % the textheight of the last page by a suitable amount.
+                                  % This command does not take effect until the next page
+                                  % so it should come on the page before the last. Make
+                                  % sure that you do not shorten the textheight too much.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{APPENDIX}
+
+Appendixes should appear before the acknowledgment.
+
+\section*{ACKNOWLEDGMENT}
+
+We would like to thank
+
+\balance
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+References are important to the reader; therefore, each citation must be complete and correct. If at all possible, references should be commonly available publications.
+
+\end{document}

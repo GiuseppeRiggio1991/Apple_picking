@@ -1,0 +1,231 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%           LaTex Shortcuts              %
+%       Author: Cristian Secchi        %
+%    E-Mail: secchi.cristian@unimore.it  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%Mathematics%%%%%
+%
+%Port Controlled Hamiltonian System
+%
+\newcommand{\pch}{\left\{
+  \begin{array}{l}
+   \dot{x}=J(x)\displaystyle\frac{\partial{H}}{\partial{x}}+G(x)u\\
+   \\
+   y=G^T(x)\displaystyle\frac{\partial{H}}{\partial{x}}
+  \end{array}
+\right.}
+%
+%Port Controlled Hamiltonian System With Dissipation
+%
+\newcommand{\pchd}{
+  \left\{
+  \begin{array}{l}
+   \dot{x}=(J(x)-R(x))\displaystyle\frac{\partial{H}}{\partial{x}}+G(x)u\\
+   \\
+   y=G^T(x)\displaystyle\frac{\partial{H}}{\partial{x}}
+  \end{array}
+\right.}
+%
+%Dual Product
+%
+\newcommand{\dual}[2]{{\langle #1,#2 \rangle}}
+%
+%Partial Derivative
+%
+\newcommand{\parder}[2]{{\frac{\partial #1}{\partial #2}}}
+\newcommand{\parderT}[2]{{\frac{\partial ^T #1}{\partial #2}}}
+\newcommand{\totder}[2]{{\frac{d #1}{d #2}}}
+
+\newcommand{\parderd}[2]{{\dfrac{\partial #1}{\partial #2}}}
+
+%
+%quick 1/2
+%
+%\@ifundefined is used for compatibility with ifacmtg.cls where the
+%command \half is already defined.
+
+\@ifundefined{half}{\newcommand{\half}{{\frac{1}{2}}}}{}
+%
+%quick mathcal (for compatibility with Stefano)
+%
+\newcommand{\spa}[1]{{\mathcal{#1}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bond Graph Definitions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\bgI{{\bf I \kern-0.17em \mathrm{I}}}
+\def\bgC{{\bf C \kern-0.55em \mathrm{I}}\;}
+\def\bgR{{\mathrm{I} \kern-0.2em {\bf R}}}
+\def\bgIC{{{\bgI \bgC}}}
+\def\bgzero{{{\bf 0}}}
+\def\bg1{{{\bf 1}}}
+
+\def\bgTF{{{\mathrm{I}  \kern-0.42em \bf T}{\mathrm{I}  \kern-0.23em \bf F}}}
+\def\bgGY{{{\bf G \kern-0.7em \mathrm{I} \kern-0.65em C %\kern-0.82em G
+} {\mathrm{Y} \kern-0.7em \bf Y}}}
+\def\bgMTF{{{\bf I  \kern-0.25em \bf M}\bgTF}}
+\def\bgMGY{{{\bf I  \kern-0.25em \bf M}\bgGY}}
+\def\bgSGY{{{\bf S  \kern-0.49em \bf S}\bgGY}}
+
+\def\bgSe{{\bf S_e}}
+\def\bgSf{{\bf S_f}}
+\def\bgS{{\bf S }}
+% \def\bg0{{\mathbf{0}}}
+% \def\bg1{{\textbf{1}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% References
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newcommand{\refeq}[1]{Eq.~(\ref{eq:#1})}
+\newcommand{\reffig}[1]{Fig.~\ref{fig:#1}}
+\newcommand{\refsec}[1]{Sec.~\ref{sec:#1}}
+\newcommand{\reflem}[1]{Lemma~\ref{lem:#1}}
+\newcommand{\refprop}[1]{Proposition~\ref{prop:#1}}
+\newcommand{\refdef}[1]{Def.~\ref{def:#1}}
+\newcommand{\refex}[1]{Example~\ref{exa:#1}}
+\newcommand{\refrem}[1]{Remark~\ref{rem:#1}}
+\newcommand{\refthe}[1]{Theorem~\ref{the:#1}}
+\newcommand{\refcor}[1]{Corollary~\ref{cor:#1}}
+\newcommand{\reftab}[1]{Tab.~\ref{tab:#1}}
+\newcommand{\refchap}[1]{Chap.~\ref{chap:#1}}
+\newcommand{\refapp}[1]{Appendix~\ref{app:#1}}
+\newcommand{\refalg}[1]{Alg.~\ref{alg:#1}}
+\newcommand{\refalgl}[1]{\ref{algl:#1}}
+
+%\index shortcuts
+
+\newcommand{\ix}[1]{#1 \index{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Colors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{color}
+\definecolor{red}{rgb}{0.8,0,0}
+\definecolor{gray}{gray}{0.9}
+\newcommand{\red}[1]{{\color{red} #1}}
+\definecolor{blue}{rgb}{0,0,0.7}
+\newcommand{\blue}[1]{{\color{blue} #1}}
+\newcommand{\green}[1]{{\color{green} #1}}
+\definecolor{orange}{rgb}{0.87,0.35,0.11}
+\newcommand{\orange}[1]{{\color{orange} #1}}
+\definecolor{white}{rgb}{0.99,1,1}
+\newcommand{\white}[1]{{\color{white} #1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Remarks, theorems...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%   \newtheorem{proposition}{Proposition}
+%   \newtheorem{remark}{Remark}
+%   \newtheorem{lemma}{Lemma}
+%   \newtheorem{theorem}{Theorem}
+%   \newtheorem{corollary}{Corollary}
+%   \newtheorem{definition}{Definition}
+%   \newtheorem{assumption}{Assumption}
+%   \newtheorem{example}{Example}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Tricks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ \newcommand{\arr}{$\longrightarrow$} %arrow
+
+ \newcommand{\fig}[2]{\includegraphics[width=#1\textwidth]{#2}}
+
+ \newcommand{\noi}{\noindent}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Special Environments
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{Acknowledgment}{\subsection*{Acknowledgments}}{\par\rm\normalsize\unboldmath\medskip}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fast \mathcal and \mathbb letters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\calA}{\mathcal{A}}
+\newcommand{\calB}{\mathcal{B}}
+\newcommand{\calC}{\mathcal{C}}
+\newcommand{\calD}{\mathcal{D}}
+\newcommand{\calE}{\mathcal{E}}
+\newcommand{\calF}{\mathcal{F}}
+\newcommand{\calG}{\mathcal{G}}
+\newcommand{\calH}{\mathcal{H}}
+\newcommand{\calI}{\mathcal{I}}
+\newcommand{\calJ}{\mathcal{J}}
+\newcommand{\calK}{\mathcal{K}}
+\newcommand{\calL}{\mathcal{L}}
+\newcommand{\calM}{\mathcal{M}}
+\newcommand{\calN}{\mathcal{N}}
+\newcommand{\calO}{\mathcal{O}}
+\newcommand{\calP}{\mathcal{P}}
+\newcommand{\calQ}{\mathcal{Q}}
+\newcommand{\calR}{\mathcal{R}}
+\newcommand{\calS}{\mathcal{S}}
+\newcommand{\calT}{\mathcal{T}}
+\newcommand{\calU}{\mathcal{U}}
+\newcommand{\calV}{\mathcal{V}}
+\newcommand{\calX}{\mathcal{X}}
+\newcommand{\calW}{\mathcal{W}}
+\newcommand{\calY}{\mathcal{Y}}
+\newcommand{\calZ}{\mathcal{Z}}
+
+\newcommand{\calbA}{\mathbb{A}}
+\newcommand{\calbB}{\mathbb{B}}
+\newcommand{\calbC}{\mathbb{C}}
+\newcommand{\calbD}{\mathbb{D}}
+\newcommand{\calbE}{\mathbb{E}}
+\newcommand{\calbF}{\mathbb{F}}
+\newcommand{\calbG}{\mathbb{G}}
+\newcommand{\calbH}{\mathbb{H}}
+\newcommand{\calbI}{\mathbb{I}}
+\newcommand{\calbJ}{\mathbb{J}}
+\newcommand{\calbK}{\mathbb{K}}
+\newcommand{\calbL}{\mathbb{L}}
+\newcommand{\calbM}{\mathbb{M}}
+\newcommand{\calbN}{\mathbb{N}}
+\newcommand{\calbO}{\mathbb{O}}
+\newcommand{\calbP}{\mathbb{P}}
+\newcommand{\calbQ}{\mathbb{Q}}
+\newcommand{\calbR}{\mathbb{R}}
+\newcommand{\calbS}{\mathbb{S}}
+\newcommand{\calbT}{\mathbb{T}}
+\newcommand{\calbU}{\mathbb{U}}
+\newcommand{\calbV}{\mathbb{V}}
+\newcommand{\calbW}{\mathbb{W}}
+\newcommand{\calbX}{\mathbb{X}}
+\newcommand{\calbY}{\mathbb{Y}}
+\newcommand{\calbZ}{\mathbb{Z}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Commands for preparing lectures
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{dynsys}{\left \{ \begin{array}[l]{ll}}{\end{array}\right.}
+\newcommand{\lti}[4]{\begin{dynsys}\dot{x}(t)=#1 x(t) + #2 u(t) \\
+y(t)=#3 x(t)+#4 u(t)
+\end{dynsys}}
+
+
+\newcommand{\laplace}[1]{\mathcal{L} \left [ #1 \right ]}
+
+\newcommand{\invlaplace}[1]{\mathcal{L}^{-1} \left [ #1 \right ]}
+
+\newcommand{\eulerolagrange}{M(q)\ddot{q}+C(q,\dot{q})\dot{q}+D(q)\dot{q}+g(q)=\tau+J^T(q)w}
+
+\newenvironment{choices}{\renewcommand{\labelitemi}{$\bigcirc$}
+\begin{itemize}}{\end{itemize}}
+\newenvironment{exercise}{\begin{quote}\itshape}{\end{quote}}
+
+
+
+
+
+
+
+
+
